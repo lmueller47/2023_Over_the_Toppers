@@ -35,6 +35,7 @@ public class Stacking : MonoBehaviour
 
 
                         //set this objects tage to player
+                        MakerMovement.toppings.Add(gameObject);
                         this.gameObject.tag = "Player";
                     player = true;
 

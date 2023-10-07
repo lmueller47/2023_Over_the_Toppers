@@ -9,6 +9,9 @@ public class MakerMovement : MonoBehaviour
 
     public float speed = 20f;
     private Rigidbody rb;
+    public static List<GameObject> toppings = new List<GameObject>();
+
+    public string collision = "";
 
     // Start is called before the first frame update
     void Start()
@@ -52,25 +55,50 @@ public class MakerMovement : MonoBehaviour
             hAxis = 0;
             vAxis = 0;
         }
+
+        if(Input.GetKeyDown(KeyCode.Space) && collision == "Oven")
+        {
+            Debug.Log("get otta here");
+            //destroy the topping
+            foreach (GameObject Obj in toppings)
+            {
+                toppings.Remove(Obj);
+                Destroy(Obj);
+            }
+
+            //made the pizza
+            GameManager.pizzaMade++;
+            GameManager.totalPizzaMade++;
+        }
+        else if(Input.GetKeyDown(KeyCode.Space) && collision == "Can")
+        {
+            //destroy the topping
+            foreach (GameObject Obj in toppings)
+            {
+                toppings.Remove(Obj);
+                Destroy(Obj);
+            }
+        }
     }
     private void FixedUpdate()
     {
         rb.velocity = new Vector3(hAxis * speed, 0f, vAxis * speed);
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Oven" && Input.GetKeyDown(KeyCode.Space))
+        if (other.gameObject.tag == "Oven")
         {
-            //destroy the topping
+            collision = "Oven";
+        }
+        if (other.gameObject.tag == "Can")
+        {
+            collision = "Can";
+        }
+    }
 
-            //made the pizza
-            GameManager.pizzaMade++;
-            GameManager.totalPizzaMade++;
-        }
-        if (other.gameObject.tag == "Oven" && Input.GetKeyDown(KeyCode.Space))
-        {
-            //destroy the topping
-        }
+    private void OnTriggerExit(Collider other)
+    {
+        collision = "";
     }
 }

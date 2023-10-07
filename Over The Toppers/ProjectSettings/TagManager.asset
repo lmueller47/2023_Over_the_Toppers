@@ -10,6 +10,7 @@ TagManager:
   - Trash
   - PatrolPoint
   - Rat
+  - Oven
   layers:
   - Default
   - TransparentFX
