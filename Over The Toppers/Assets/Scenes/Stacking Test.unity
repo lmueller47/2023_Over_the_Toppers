@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3dda9695bfbacf45980330821dbfef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 300
+  timeRemaining: 120
   timeIsRunning: 1
   timeText: {fileID: 320447447}
 --- !u!114 &320447447
@@ -2488,6 +2488,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 692212524814479360, guid: 9405cad313b7b8548906d24aa9067f21, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
     - target: {fileID: 7910594071303878600, guid: 9405cad313b7b8548906d24aa9067f21, type: 3}
       propertyPath: m_Name
       value: Maker

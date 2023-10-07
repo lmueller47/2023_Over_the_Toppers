@@ -20,7 +20,7 @@ public class GenerateOrders : MonoBehaviour
     public IEnumerator Order()
     {
         //generate topping amount
-        float toppings = Mathf.Round(Random.Range(3, 10));
+        float toppings = Mathf.Round(Random.Range(3, 7));
         //create order list for player to see ui
         //selected first order must be done first
         GameManager.orders.Add(toppings);

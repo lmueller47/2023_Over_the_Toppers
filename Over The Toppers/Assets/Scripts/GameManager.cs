@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class GameManager : MonoBehaviour
         {
             orderText.text = "No Orders";
         }
-        //change pizza player speed value based on topping stackCount
+
         //timer for corperate inspection when timer is reset
         if(inspection)
         {
@@ -47,9 +48,11 @@ public class GameManager : MonoBehaviour
             inspection = false;
 
             //do inspection stuff
-            if(pizzaMade < 10 || dirtyCount > 10)
+            if(pizzaMade < 4 || dirtyCount > 10)
             {
                 //lose game load game over / end scene
+                SceneManager.LoadScene("Game Over");
+
             }
             else
             {
