@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class CleanerMovement : MonoBehaviour
 {
-    public float speed = 6f;
+    public float hAxis;
+    public float vAxis;
+
+    public float speed = 20f;
+    private Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     // Start is called before the first frame update
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collided");
-        if (collision.gameObject.tag != "Player")
+        if (collision.gameObject.tag == "Trash")
         {
             Destroy(collision.gameObject);
         }
@@ -21,22 +30,40 @@ public class CleanerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             //move up in z
-            transform.position = transform.position + new Vector3(0, 0, .01f * speed);
+            //transform.position = transform.position + new Vector3(0, 0, .01f * speed);
+            hAxis = 0;
+            vAxis = 1;
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow))
         {
             //move down in z
-            transform.position = transform.position + new Vector3(0, 0, -.01f * speed);
+            //transform.position = transform.position + new Vector3(0, 0, -.01f * speed);
+            hAxis = -1;
+            vAxis = 0;
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
             //down x
-            transform.position = transform.position + new Vector3(-.01f * speed, 0, 0);
+            //transform.position = transform.position + new Vector3(-.01f * speed, 0, 0);
+            hAxis = 0;
+            vAxis = -1;
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
             //up in x
-            transform.position = transform.position + new Vector3(.01f * speed, 0, 0);
+            //transform.position = transform.position + new Vector3(.01f * speed, 0, 0);
+            hAxis = 1;
+            vAxis = 0;
         }
+        else
+        {
+            hAxis = 0;
+            vAxis = 0;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector3(hAxis * speed, 0f, vAxis * speed);
     }
 }
