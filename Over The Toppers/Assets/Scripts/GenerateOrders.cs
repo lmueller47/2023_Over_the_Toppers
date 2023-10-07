@@ -10,7 +10,7 @@ public class GenerateOrders : MonoBehaviour
     public static void Order()
     {
         //generate topping amount
-        float toppings = Mathf.Round(Random.Range(0, 4));
+        float toppings = Mathf.Round(Random.Range(1, 3));
 
         //set that to GM
         GameManager.order = toppings;
