@@ -7,24 +7,12 @@ using UnityEngine;
 
 public class GenerateOrders : MonoBehaviour
 {
-    public bool ordering = false;
-    private void Update()
-    {
-        if (!ordering)
-        {
-            ordering = true;
-            StartCoroutine(Order());
-        }
-    }
-
-    public IEnumerator Order()
+    public static void Order()
     {
         //generate topping amount
-        float toppings = Mathf.Round(Random.Range(3, 7));
-        //create order list for player to see ui
-        //selected first order must be done first
-        GameManager.orders.Add(toppings);
-        yield return new WaitForSeconds(Random.Range(5, 12.5f));
-        ordering = false;
+        float toppings = Mathf.Round(Random.Range(0, 4));
+
+        //set that to GM
+        GameManager.order = toppings;
     }
 }

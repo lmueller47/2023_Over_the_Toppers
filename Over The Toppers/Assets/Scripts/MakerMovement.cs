@@ -28,28 +28,24 @@ public class MakerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             //move up in z
-            //transform.position = transform.position + new Vector3(0, 0, .01f * speed);
             hAxis = 0;
             vAxis = 1;
         }
         else if (Input.GetKey(KeyCode.A))
         {
             //move down in z
-            //transform.position = transform.position + new Vector3(0, 0, -.01f * speed);
             hAxis = -1;
             vAxis = 0;
         }
         else if (Input.GetKey(KeyCode.S))
         {
             //down x
-            //transform.position = transform.position + new Vector3(-.01f * speed, 0, 0);
             hAxis = 0;
             vAxis = -1;
         }
         else if (Input.GetKey(KeyCode.D))
         {
             //up in x
-            //transform.position = transform.position + new Vector3(.01f * speed, 0, 0);
             hAxis = 1;
             vAxis = 0;
         }
@@ -59,7 +55,7 @@ public class MakerMovement : MonoBehaviour
             vAxis = 0;
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && collision == "Oven" && !destroying)
+        if(Input.GetKeyDown(KeyCode.Space) && collision == "Oven" && !destroying && GameManager.pizzaDone == true)
         {
             destroying = true;
             Debug.Log("get otta here");
@@ -74,6 +70,8 @@ public class MakerMovement : MonoBehaviour
             //made the pizza
             GameManager.pizzaMade++;
             GameManager.totalPizzaMade++;
+            GameManager.stackCount = 0;
+            GenerateOrders.Order();
             destroying = false;
         }
         else if(Input.GetKeyDown(KeyCode.Space) && collision == "Can" && !destroying)
@@ -85,6 +83,8 @@ public class MakerMovement : MonoBehaviour
                 Destroy(toppings[i]);
             }
             toppings.Clear();
+
+            GameManager.stackCount = 0;
             destroying = false;
         }
     }

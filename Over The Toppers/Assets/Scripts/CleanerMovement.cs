@@ -31,28 +31,24 @@ public class CleanerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             //move up in z
-            //transform.position = transform.position + new Vector3(0, 0, .01f * speed);
             hAxis = 0;
             vAxis = 1;
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             //move down in z
-            //transform.position = transform.position + new Vector3(0, 0, -.01f * speed);
             hAxis = -1;
             vAxis = 0;
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
             //down x
-            //transform.position = transform.position + new Vector3(-.01f * speed, 0, 0);
             hAxis = 0;
             vAxis = -1;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             //up in x
-            //transform.position = transform.position + new Vector3(.01f * speed, 0, 0);
             hAxis = 1;
             vAxis = 0;
         }

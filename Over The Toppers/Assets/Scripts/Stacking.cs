@@ -8,6 +8,7 @@ public class Stacking : MonoBehaviour
     public float hAxis;
     public float vAxis;
     public bool stacked = false;
+    public GameObject maker;
 
     public static bool death = false;
 
@@ -18,6 +19,7 @@ public class Stacking : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         GameManager.dirtyCount += 1;
+        maker = GameObject.FindGameObjectWithTag("Player");
     }
 
     //when the topping collides with any topping/Pizza
@@ -28,22 +30,25 @@ public class Stacking : MonoBehaviour
             {
                 {
                     //check to make sure collision is above the pizza
-                    if (gameObject.transform.position.y >= 2)
+                    if (gameObject.transform.position.y >= 1.6)
                     {
-                        //set this object as a child of the pizza object
+                    //set this object as a child of the pizza object
                         this.gameObject.transform.parent = collision.gameObject.transform;
 
 
                         //set this objects tage to player
                         MakerMovement.toppings.Add(gameObject);
                         this.gameObject.tag = "Player";
-                    player = true;
+                        player = true;
+                        gameObject.transform.position = new Vector3(collision.gameObject.transform.position.x, gameObject.transform.position.y, collision.gameObject.transform.position.z);
 
-                        //add to stack count
-                        if(!stacked)
+                    //add to stack count
+                    if (!stacked)
                         {
+                        stacked = true;
                             GameManager.stackCount++;
                             GameManager.totalToppingsCollcted++;
+                        Debug.Log(GameManager.stackCount);
                         }
                     }
                 }
@@ -57,56 +62,9 @@ public class Stacking : MonoBehaviour
     }
     private void Update()
     {
-        if(death && gameObject.tag == "Player")
-        {
-            GameManager.stackCount = 0;
-            Destroy(gameObject);
-        }
-
         if(player)
         {
-            //set x and y of this object to scale with x and y of player object 
-            if (Input.GetKey(KeyCode.W))
-            {
-                //move up in z
-                //transform.position = transform.position + new Vector3(0, 0, .01f * speed);
-                hAxis = 0;
-                vAxis = 1;
-            }
-            else if (Input.GetKey(KeyCode.A))
-            {
-                //move down in z
-                //transform.position = transform.position + new Vector3(0, 0, -.01f * speed);
-                hAxis = -1;
-                vAxis = 0;
-            }
-            else if (Input.GetKey(KeyCode.S))
-            {
-                //down x
-                //transform.position = transform.position + new Vector3(-.01f * speed, 0, 0);
-                hAxis = 0;
-                vAxis = -1;
-            }
-            else if (Input.GetKey(KeyCode.D))
-            {
-                //up in x
-                //transform.position = transform.position + new Vector3(.01f * speed, 0, 0);
-                hAxis = 1;
-                vAxis = 0;
-            }
-            else
-            {
-                hAxis = 0;
-                vAxis = 0;
-            }
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if(player)
-        {
-            rb.velocity = new Vector3(hAxis * speed, 0f, vAxis * speed);
+            gameObject.transform.position = new Vector3(maker.gameObject.transform.position.x, gameObject.transform.position.y, maker.gameObject.transform.position.z);
         }
     }
 }

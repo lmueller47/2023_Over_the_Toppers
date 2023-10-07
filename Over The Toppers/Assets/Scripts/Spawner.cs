@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
 
     public IEnumerator Spawn()
     {
-        yield return new WaitForSeconds(Random.Range(1, 8));
+        yield return new WaitForSeconds(Random.Range(3, 20));
         Instantiate(topping, transform.position, Quaternion.identity);
         spawning = false;
     }

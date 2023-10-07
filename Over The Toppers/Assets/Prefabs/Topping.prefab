@@ -146,3 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9b1f8e0190285409fcf05aaf38b428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 0
+  hAxis: 0
+  vAxis: 0
+  stacked: 0
+  speed: 10

@@ -14,11 +14,14 @@ public class GameManager : MonoBehaviour
     public static int totalMessCleaned;
     public static int totalToppingsCollcted;
     public static int inspectionsPassed;
-    public static List<float> orders = new List<float>();
+    public static bool pizzaDone;
+    public static float order;
 
     public TMP_Text orderText;
     void Start()
     {
+        order = 0;
+        GenerateOrders.Order();
         stackCount = 0;
         pizzaMade = 0;
         dirtyCount = 0;
@@ -26,19 +29,29 @@ public class GameManager : MonoBehaviour
         totalMessCleaned = 0;
         totalToppingsCollcted = 0;
         inspectionsPassed = 0;
+        pizzaDone = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(orders.Count > 0)
+        if(order != 0)
         {
             //display first element as ui for player
-            orderText.text = ("Pizza with " + orders[0] + " toppings.");
+            orderText.text = ("Pizza with " + order + " toppings.");
         }
         else
         {
             orderText.text = "No Orders";
+        }
+
+        if(stackCount == order)
+        {
+            pizzaDone = true;
+        }
+        else
+        {
+            pizzaDone = false;
         }
 
         //timer for corperate inspection when timer is reset
