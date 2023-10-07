@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class Stacking : MonoBehaviour
 {
+    public bool player = false;
+    public float hAxis;
+    public float vAxis;
+
+    public float speed = 20f;
+    private Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     //when the topping collides with any topping/Pizza
     private void OnCollisionEnter(Collision collision)
     {
@@ -19,6 +31,7 @@ public class Stacking : MonoBehaviour
 
                         //set this objects tage to player
                         this.gameObject.tag = "Player";
+                    player = true;
 
                         //add to stack count
                         GameManager.stackCount += 1;
@@ -30,13 +43,53 @@ public class Stacking : MonoBehaviour
                 //change tag so it can collide with cleaner
                 this.gameObject.tag = "Trash";
             }
-        }
-
-    private void OnTriggerEnter(Collider other)
+    }
+    private void Update()
     {
-        if(other.gameObject.tag == "Cleaner")
+        if(player)
         {
-            Destroy(gameObject);
+            //set x and y of this object to scale with x and y of player object 
+            if (Input.GetKey(KeyCode.W))
+            {
+                //move up in z
+                //transform.position = transform.position + new Vector3(0, 0, .01f * speed);
+                hAxis = 0;
+                vAxis = 1;
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                //move down in z
+                //transform.position = transform.position + new Vector3(0, 0, -.01f * speed);
+                hAxis = -1;
+                vAxis = 0;
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                //down x
+                //transform.position = transform.position + new Vector3(-.01f * speed, 0, 0);
+                hAxis = 0;
+                vAxis = -1;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                //up in x
+                //transform.position = transform.position + new Vector3(.01f * speed, 0, 0);
+                hAxis = 1;
+                vAxis = 0;
+            }
+            else
+            {
+                hAxis = 0;
+                vAxis = 0;
+            }
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if(player)
+        {
+            rb.velocity = new Vector3(hAxis * speed, 0f, vAxis * speed);
         }
     }
 }

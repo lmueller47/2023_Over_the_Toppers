@@ -5,38 +5,62 @@ using UnityEngine;
 public class CleanerMovement : MonoBehaviour
 {
     public float speed = 6f;
-    // Start is called before the first frame update
-    private void OnCollisionEnter(Collision collision)
+    private Rigidbody rb;
+    public float hAxis;
+    public float vAxis;
+
+    private void Start()
     {
-        Debug.Log("Collided");
-        if (collision.gameObject.tag != "Player")
-        {
-            Destroy(collision.gameObject);
-        }
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector3(hAxis * speed, 0f, vAxis * speed);
+    }
+
     void Update()
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
             //move up in z
-            transform.position = transform.position + new Vector3(0, 0, .01f * speed);
+            //transform.position = transform.position + new Vector3(0, 0, .01f * speed);
+            hAxis = 0;
+            vAxis = 1;
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
             //move down in z
-            transform.position = transform.position + new Vector3(0, 0, -.01f * speed);
+            //transform.position = transform.position + new Vector3(0, 0, -.01f * speed);
+            hAxis = 0;
+            vAxis = -1;
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow))
         {
             //down x
-            transform.position = transform.position + new Vector3(-.01f * speed, 0, 0);
+            //transform.position = transform.position + new Vector3(-.01f * speed, 0, 0);
+            hAxis = -1;
+            vAxis = 0;
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
             //up in x
-            transform.position = transform.position + new Vector3(.01f * speed, 0, 0);
+            //transform.position = transform.position + new Vector3(.01f * speed, 0, 0);
+            hAxis = 1;
+            vAxis = 0;
+        }
+        else
+        {
+            hAxis = 0;
+            vAxis = 0;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Trash")
+        {
+            Destroy(collision.gameObject);
         }
     }
 }
