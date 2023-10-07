@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MakerMovement : MonoBehaviour
@@ -12,6 +13,8 @@ public class MakerMovement : MonoBehaviour
     public static List<GameObject> toppings = new List<GameObject>();
 
     public string collision = "";
+
+    public bool destroying = false;
 
     // Start is called before the first frame update
     void Start()
@@ -56,28 +59,33 @@ public class MakerMovement : MonoBehaviour
             vAxis = 0;
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && collision == "Oven")
+        if(Input.GetKeyDown(KeyCode.Space) && collision == "Oven" && !destroying)
         {
+            destroying = true;
             Debug.Log("get otta here");
             //destroy the topping
-            foreach (GameObject Obj in toppings)
+
+            for (int i = 0; i < toppings.Count; i++)
             {
-                toppings.Remove(Obj);
-                Destroy(Obj);
+                Destroy(toppings[i]);
             }
+            toppings.Clear();
 
             //made the pizza
             GameManager.pizzaMade++;
             GameManager.totalPizzaMade++;
+            destroying = false;
         }
-        else if(Input.GetKeyDown(KeyCode.Space) && collision == "Can")
+        else if(Input.GetKeyDown(KeyCode.Space) && collision == "Can" && !destroying)
         {
+            destroying = true;
             //destroy the topping
-            foreach (GameObject Obj in toppings)
+            for (int i = 0; i < toppings.Count; i++)
             {
-                toppings.Remove(Obj);
-                Destroy(Obj);
+                Destroy(toppings[i]);
             }
+            toppings.Clear();
+            destroying = false;
         }
     }
     private void FixedUpdate()
