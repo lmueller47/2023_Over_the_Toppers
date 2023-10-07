@@ -21,27 +21,24 @@ public class TimerScript : MonoBehaviour
     {
         if (timeIsRunning)
         {
-            if (timeRemaining >= 0 )
+            if (timeRemaining > 0 )
             {
-                timeRemaining += Time.deltaTime;
+                timeRemaining -= Time.deltaTime;
                 DisplayTime(timeRemaining);
+            }
+            else //times up
+            {
+                //corperate inspection
+                GameManager.inspection = true;
+                //reset timer
+                timeRemaining = Time.deltaTime+300;
             }
         }
        
     }
     void DisplayTime (float timeToDisplay)
     {
-        if (timeToDisplay < 500)
-        {
-            timeToDisplay += 1;
-        }
-        else
-        {
-            //reset timer
-            timeToDisplay = 0;
-            //corperate inspection
-            GameManager.inspection = true;
-        }
+        timeToDisplay += 1;
         
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
