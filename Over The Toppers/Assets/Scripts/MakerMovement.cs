@@ -57,4 +57,20 @@ public class MakerMovement : MonoBehaviour
     {
         rb.velocity = new Vector3(hAxis * speed, 0f, vAxis * speed);
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.tag == "Oven" && Input.GetKeyDown(KeyCode.Space))
+        {
+            //destroy the topping
+
+            //made the pizza
+            GameManager.pizzaMade++;
+            GameManager.totalPizzaMade++;
+        }
+        if (other.gameObject.tag == "Oven" && Input.GetKeyDown(KeyCode.Space))
+        {
+            //destroy the topping
+        }
+    }
 }

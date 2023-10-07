@@ -9,6 +9,8 @@ public class Stacking : MonoBehaviour
     public float vAxis;
     public bool stacked = false;
 
+    public static bool death = false;
+
     public float speed = 20f;
     private Rigidbody rb;
 
@@ -30,6 +32,7 @@ public class Stacking : MonoBehaviour
                     {
                         //set this object as a child of the pizza object
                         this.gameObject.transform.parent = collision.gameObject.transform;
+
 
                         //set this objects tage to player
                         this.gameObject.tag = "Player";
@@ -53,6 +56,12 @@ public class Stacking : MonoBehaviour
     }
     private void Update()
     {
+        if(death && gameObject.tag == "Player")
+        {
+            GameManager.stackCount = 0;
+            Destroy(gameObject);
+        }
+
         if(player)
         {
             //set x and y of this object to scale with x and y of player object 

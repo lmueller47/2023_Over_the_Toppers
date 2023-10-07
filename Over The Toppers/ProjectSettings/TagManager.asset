@@ -9,6 +9,7 @@ TagManager:
   - topping
   - Trash
   - PatrolPoint
+  - Rat
   layers:
   - Default
   - TransparentFX

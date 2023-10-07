@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static bool inspection = false;
     public static int pizzaMade;
     public static int dirtyCount;
-    public static int toatlPizzaMade;
+    public static int totalPizzaMade;
     public static int totalMessCleaned;
     public static int totalToppingsCollcted;
     public static int inspectionsPassed;
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         stackCount = 0;
         pizzaMade = 0;
         dirtyCount = 0;
-        toatlPizzaMade = 0;
+        totalPizzaMade = 0;
         totalMessCleaned = 0;
         totalToppingsCollcted = 0;
         inspectionsPassed = 0;

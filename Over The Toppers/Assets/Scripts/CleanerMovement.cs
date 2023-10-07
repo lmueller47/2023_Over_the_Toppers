@@ -67,4 +67,12 @@ public class CleanerMovement : MonoBehaviour
     {
         rb.velocity = new Vector3(hAxis * speed, 0f, vAxis * speed);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Rat")
+        {
+            Destroy(other.gameObject);
+        }
+    }
 }
