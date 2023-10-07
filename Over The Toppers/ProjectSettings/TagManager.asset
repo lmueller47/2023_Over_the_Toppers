@@ -11,6 +11,7 @@ TagManager:
   - PatrolPoint
   - Rat
   - Oven
+  - Can
   layers:
   - Default
   - TransparentFX

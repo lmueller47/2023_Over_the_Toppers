@@ -3282,3 +3282,154 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 602.076636 seconds.
+  path: Assets/Over the Toppers.png
+  artifactKey: Guid(1f20deafaaad8344ab91a907160d00ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Over the Toppers.png using Guid(1f20deafaaad8344ab91a907160d00ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07130f2d8964fba168381e9d3b5318f9') in 0.081999 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 11.809779 seconds.
+  path: Assets/Pizza Oven.unity
+  artifactKey: Guid(3d8e1d386d2bfbc4e992d21a79da5805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pizza Oven.unity using Guid(3d8e1d386d2bfbc4e992d21a79da5805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24fcaf2a3c0d0d60836225c0048d3905') in 0.000798 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 5.937577 seconds.
+  path: Assets/3d models
+  artifactKey: Guid(eae6be0e918b6b541a22ee112cfe6831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3d models using Guid(eae6be0e918b6b541a22ee112cfe6831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad775d012fd6a66072594b80d1d3c1b3') in 0.000605 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.086271 seconds.
+  path: Assets/3d models/Cutting Board.blend
+  artifactKey: Guid(ea653e2fc04c07f4fb18e176ed91af87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3d models/Cutting Board.blend using Guid(ea653e2fc04c07f4fb18e176ed91af87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72d4848b957a02bee876be5e3a3d2797') in 0.098175 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/3d models/ManagmentMen.blend
+  artifactKey: Guid(19c3b41870f4f774d8721ef7c05a0d4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3d models/ManagmentMen.blend using Guid(19c3b41870f4f774d8721ef7c05a0d4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd842859800485aac73deddfb5a58b54d') in 0.035845 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/3d models/Mop.blend
+  artifactKey: Guid(90fbabac8e36bcf42bb2f11d4de44fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3d models/Mop.blend using Guid(90fbabac8e36bcf42bb2f11d4de44fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b52d6f559957c022b4ee166c7ae3b7b8') in 0.029695 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/3d models/Toppers_Customer.blend
+  artifactKey: Guid(966c533dabce2bb47856260e60b7e73a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3d models/Toppers_Customer.blend using Guid(966c533dabce2bb47856260e60b7e73a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95f472ca8da7ab6a95b532a2f8b51a35') in 0.025437 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/3d models/Rack.blend
+  artifactKey: Guid(620187d8a83dee540aef78943bcd7f1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3d models/Rack.blend using Guid(620187d8a83dee540aef78943bcd7f1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db885ad869f424eeea31427dd8eb5788') in 0.021626 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/3d models/Sink.blend
+  artifactKey: Guid(759d766afd646d24da48b4489e8748d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3d models/Sink.blend using Guid(759d766afd646d24da48b4489e8748d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc1b3a35a1e7c7f44cdc30c53a816913') in 0.032628 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/3d models/PizzaPlaceOfPain.blend
+  artifactKey: Guid(826912e61041a5b4db8028540af65c3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3d models/PizzaPlaceOfPain.blend using Guid(826912e61041a5b4db8028540af65c3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46760111db5478f57ec665305b2d154b') in 0.499164 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 286
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\MuellerLC29\Documents\GitHub\2023_Over_the_Toppers\Over The Toppers\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\MuellerLC29\Documents\GitHub\2023_Over_the_Toppers\Over The Toppers\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.491 seconds
+Refreshing native plugins compatible for Editor in 3.26 ms, found 3 plugins.
+Native extension for UWP target not found
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for AppleTV target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.008 seconds
+Domain Reload Profiling: 1496ms
+	BeginReloadAssembly (168ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (39ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (35ms)
+	LoadAllAssembliesAndSetupDomain (238ms)
+		LoadAssemblies (313ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (1008ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (341ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (50ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (62ms)
+			ProcessInitializeOnLoadAttributes (199ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Refreshing native plugins compatible for Editor in 3.25 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3113 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (29.7 KB). Loaded Objects now: 3768.
+Memory consumption went from 120.3 MB to 120.3 MB.
+Total: 4.143300 ms (FindLiveObjects: 0.365300 ms CreateObjectMapping: 0.281800 ms MarkObjects: 3.441700 ms  DeleteObjects: 0.053400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
