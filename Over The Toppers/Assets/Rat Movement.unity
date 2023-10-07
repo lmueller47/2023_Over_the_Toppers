@@ -656,9 +656,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8df58887543c24ca7bdc34076589f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolPoints: []
+  patrolPoints:
+  - {fileID: 385966614}
+  - {fileID: 922925462}
+  - {fileID: 1006025838}
   targetPoint: 0
-  speed: 0
+  speed: 4
 --- !u!65 &1705107057
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -752,6 +755,6 @@ SceneRoots:
   - {fileID: 420873580}
   - {fileID: 216040642}
   - {fileID: 1705107060}
+  - {fileID: 385966614}
   - {fileID: 922925462}
   - {fileID: 1006025838}
-  - {fileID: 385966614}
