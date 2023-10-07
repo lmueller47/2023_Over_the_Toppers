@@ -13,6 +13,9 @@ public class Stacking : MonoBehaviour
             {
                 //set this object as a child of the pizza object
                 this.gameObject.transform.parent = collision.gameObject.transform;
+                //set this objects tage to player
+                this.gameObject.tag = "Player";
+                GameManager.stackCount++;
             }
         }
     }
