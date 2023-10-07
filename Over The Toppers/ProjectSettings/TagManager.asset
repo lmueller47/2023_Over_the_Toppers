@@ -8,6 +8,7 @@ TagManager:
   - Cleaner
   - topping
   - Trash
+  - PatrolPoint
   layers:
   - Default
   - TransparentFX

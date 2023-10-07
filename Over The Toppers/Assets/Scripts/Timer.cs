@@ -37,7 +37,10 @@ public class TimerScript : MonoBehaviour
         }
         else
         {
+            //reset timer
             timeToDisplay = 0;
+            //corperate inspection
+            GameManager.inspection = true;
         }
         
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);

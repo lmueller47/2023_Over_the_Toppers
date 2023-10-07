@@ -17,9 +17,10 @@ public class CleanerMovement : MonoBehaviour
     // Start is called before the first frame update
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collided");
         if (collision.gameObject.tag == "Trash")
         {
+            GameManager.dirtyCount--;
+            GameManager.totalMessCleaned++;
             Destroy(collision.gameObject);
         }
     }

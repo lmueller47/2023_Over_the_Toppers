@@ -7,6 +7,7 @@ public class Stacking : MonoBehaviour
     public bool player = false;
     public float hAxis;
     public float vAxis;
+    public bool stacked = false;
 
     public float speed = 20f;
     private Rigidbody rb;
@@ -14,6 +15,7 @@ public class Stacking : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        GameManager.dirtyCount += 1;
     }
 
     //when the topping collides with any topping/Pizza
@@ -34,15 +36,20 @@ public class Stacking : MonoBehaviour
                     player = true;
 
                         //add to stack count
-                        GameManager.stackCount += 1;
+                        if(!stacked)
+                        {
+                            GameManager.stackCount++;
+                            GameManager.totalToppingsCollcted++;
+                        }
                     }
                 }
             }
             else
             {
                 //change tag so it can collide with cleaner
+                //gameObject.layer = collision.gameObject.layer;
                 this.gameObject.tag = "Trash";
-            }
+        }
     }
     private void Update()
     {
