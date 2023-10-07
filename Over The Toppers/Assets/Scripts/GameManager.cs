@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static int stackCount;
-    // Start is called before the first frame update
+    public static float stackCount;
+
     void Start()
     {
         stackCount = 0;
@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //change pizza player speed value based on topping stackCount
-
-        //timer for corperate inspection
+        //timer for corperate inspection when timer is reset
     }
 }
