@@ -17,7 +17,14 @@ public class GameManager : MonoBehaviour
     public static bool pizzaDone;
     public static float order;
 
+    bool leadingCharForDelay = false;
+    string leadingChar = "";
+    string writer;
+
     public TMP_Text orderText;
+    public TMP_Text inspectionText;
+
+    public GameObject panel;
     void Start()
     {
         order = 0;
@@ -30,6 +37,9 @@ public class GameManager : MonoBehaviour
         totalToppingsCollcted = 0;
         inspectionsPassed = 0;
         pizzaDone = false;
+        writer = inspectionText.text;
+        inspectionText.text = "";
+        panel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -69,9 +79,37 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                StartCoroutine(TypeWriterText());
                 inspectionsPassed++;
                 pizzaMade = 0;
             }
         }
+    }
+    
+    IEnumerator TypeWriterText()
+    {
+        panel.SetActive(true);
+        inspectionText.text = leadingCharForDelay ? leadingChar : "";
+
+        foreach(char c in writer)
+        {
+            if(inspectionText.text.Length > 0)
+            {
+                inspectionText.text = inspectionText.text.Substring(0, inspectionText.text.Length - leadingChar.Length);
+            }
+            inspectionText.text += c;
+            inspectionText.text += leadingChar;
+            yield return new WaitForSeconds(.05f);
+        }
+
+        if(leadingChar != "")
+        {
+            inspectionText.text = inspectionText.text.Substring(0, inspectionText.text.Length - leadingChar.Length);
+        }
+
+        yield return new WaitForSeconds(2f);
+        inspectionText.text = "";
+        leadingChar = "";
+        panel.SetActive(false);
     }
 }

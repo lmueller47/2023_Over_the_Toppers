@@ -29,9 +29,7 @@ public class Stacking : MonoBehaviour
             if (collision.gameObject.tag == "Player")
             {
                 {
-                    //check to make sure collision is above the pizza
-                    if (gameObject.transform.position.y >= 1)
-                    {
+
                     //set this object as a child of the pizza object
                         this.gameObject.transform.parent = collision.gameObject.transform;
 
@@ -45,12 +43,11 @@ public class Stacking : MonoBehaviour
 
                     //add to stack count
                     if (!stacked)
-                        {
+                    {
                         stacked = true;
-                            GameManager.stackCount++;
-                            GameManager.totalToppingsCollcted++;
+                        GameManager.stackCount++;
+                        GameManager.totalToppingsCollcted++;
                         Debug.Log(GameManager.stackCount);
-                        }
                     }
                 }
             }
