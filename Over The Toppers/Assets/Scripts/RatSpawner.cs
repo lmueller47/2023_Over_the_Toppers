@@ -20,7 +20,6 @@ public class RatSpawner : MonoBehaviour
     public IEnumerator Spawn()
     {
         Instantiate(rat, transform.position, Quaternion.identity);
-        GameManager.dirtyCount += 2;
         yield return new WaitForSeconds(10f);
         spawning = false;
     }

@@ -19,14 +19,14 @@ public class Stacking : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         GameManager.dirtyCount += 1;
-        maker = GameObject.FindGameObjectWithTag("Player");
+        maker = GameObject.Find("Maker");
     }
 
     //when the topping collides with any topping/Pizza
     private void OnCollisionEnter(Collision collision)
     {
             //if it collides with the player
-            if (collision.gameObject.tag == "Player")
+            if (collision.gameObject.tag == "Player" && gameObject.tag != "Trash")
             {
                 {
 
@@ -36,7 +36,6 @@ public class Stacking : MonoBehaviour
 
                         //set this objects tage to player
                         MakerMovement.toppings.Add(gameObject);
-                        this.gameObject.tag = "Player";
                         player = true;
                         gameObject.layer = collision.gameObject.layer;
                         gameObject.transform.position = new Vector3(collision.gameObject.transform.position.x, gameObject.transform.position.y, collision.gameObject.transform.position.z);
@@ -47,6 +46,7 @@ public class Stacking : MonoBehaviour
                         stacked = true;
                         GameManager.stackCount++;
                         GameManager.totalToppingsCollcted++;
+                        GameManager.dirtyCount--;
                         Debug.Log(GameManager.stackCount);
                     }
                 }
@@ -62,7 +62,16 @@ public class Stacking : MonoBehaviour
     {
         if(player)
         {
+            this.gameObject.tag = "Player";
             gameObject.transform.position = new Vector3(maker.gameObject.transform.position.x, gameObject.transform.position.y, maker.gameObject.transform.position.z);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if(gameObject.tag != "Player")
+        {
+            GameManager.dirtyCount--;
         }
     }
 }

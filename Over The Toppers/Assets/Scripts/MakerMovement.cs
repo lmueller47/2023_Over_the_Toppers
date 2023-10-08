@@ -64,7 +64,12 @@ public class MakerMovement : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && collision == "Oven" && !destroying && GameManager.pizzaDone == true)
         {
             destroying = true;
-            Debug.Log("get otta here");
+            GameManager.pizzaMade++;
+            GameManager.totalPizzaMade++;
+            GameManager.stackCount = 0;
+            GenerateOrders.Order();
+
+            Debug.Log("pm = " + GameManager.pizzaMade);
             //destroy the topping
 
             for (int i = 0; i < toppings.Count; i++)
@@ -72,12 +77,6 @@ public class MakerMovement : MonoBehaviour
                 Destroy(toppings[i]);
             }
             toppings.Clear();
-
-            //made the pizza
-            GameManager.pizzaMade++;
-            GameManager.totalPizzaMade++;
-            GameManager.stackCount = 0;
-            GenerateOrders.Order();
             destroying = false;
         }
         else if(Input.GetKeyDown(KeyCode.Space) && collision == "Can" && !destroying)

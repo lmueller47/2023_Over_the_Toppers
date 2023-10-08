@@ -21,7 +21,6 @@ public class CleanerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Trash")
         {
-            GameManager.dirtyCount--;
             GameManager.totalMessCleaned++;
             Destroy(collision.gameObject);
         }

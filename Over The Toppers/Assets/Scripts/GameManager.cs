@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     public TMP_Text orderText;
     public TMP_Text inspectionText;
+    public TMP_Text top;
 
     public GameObject panel;
     void Start()
@@ -40,11 +41,13 @@ public class GameManager : MonoBehaviour
         writer = inspectionText.text;
         inspectionText.text = "";
         panel.SetActive(false);
+        top.text = ("" + 0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        top.text = "" + stackCount;
         if(order != 0)
         {
             //display first element as ui for player
@@ -71,7 +74,7 @@ public class GameManager : MonoBehaviour
             inspection = false;
 
             //do inspection stuff
-            if(pizzaMade < 4 || dirtyCount > 10)
+            if(pizzaMade < 4 || dirtyCount > 15)
             {
                 //lose game load game over / end scene
                 SceneManager.LoadScene("Game Over");

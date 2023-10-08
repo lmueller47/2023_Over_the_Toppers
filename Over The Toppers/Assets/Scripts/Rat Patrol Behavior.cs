@@ -19,6 +19,7 @@ public class RatPatrolBehavior : MonoBehaviour
         targetPoint = 0;
         lastPosX = 0;
         lastPosZ = 0;
+        GameManager.dirtyCount++;
     }
 
     // Update is called once per frame
@@ -65,6 +66,6 @@ public class RatPatrolBehavior : MonoBehaviour
     }
     private void OnDestroy()
     {
-        GameManager.dirtyCount -= 2;
+        GameManager.dirtyCount--;
     }
 }

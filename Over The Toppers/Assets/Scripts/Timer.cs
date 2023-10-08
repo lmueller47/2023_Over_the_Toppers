@@ -31,7 +31,7 @@ public class TimerScript : MonoBehaviour
                 //corperate inspection
                 GameManager.inspection = true;
                 //reset timer
-                timeRemaining = Time.deltaTime+300;
+                timeRemaining = Time.deltaTime+90;
             }
         }
        
