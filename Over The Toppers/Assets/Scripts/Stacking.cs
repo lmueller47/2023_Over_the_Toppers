@@ -30,7 +30,7 @@ public class Stacking : MonoBehaviour
             {
                 {
                     //check to make sure collision is above the pizza
-                    if (gameObject.transform.position.y >= 1.6)
+                    if (gameObject.transform.position.y >= 1)
                     {
                     //set this object as a child of the pizza object
                         this.gameObject.transform.parent = collision.gameObject.transform;
