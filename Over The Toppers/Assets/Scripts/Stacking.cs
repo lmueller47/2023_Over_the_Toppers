@@ -40,6 +40,7 @@ public class Stacking : MonoBehaviour
                         MakerMovement.toppings.Add(gameObject);
                         this.gameObject.tag = "Player";
                         player = true;
+                        gameObject.layer = collision.gameObject.layer;
                         gameObject.transform.position = new Vector3(collision.gameObject.transform.position.x, gameObject.transform.position.y, collision.gameObject.transform.position.z);
 
                     //add to stack count

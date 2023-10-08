@@ -16,6 +16,8 @@ public class MakerMovement : MonoBehaviour
 
     public bool destroying = false;
 
+    public GameObject model;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,24 +32,28 @@ public class MakerMovement : MonoBehaviour
             //move up in z
             hAxis = 0;
             vAxis = 1;
+            model.transform.eulerAngles = new Vector3(0, 0, 0);
         }
         else if (Input.GetKey(KeyCode.A))
         {
             //move down in z
             hAxis = -1;
             vAxis = 0;
+            model.transform.eulerAngles = new Vector3(0, -90, 0);
         }
         else if (Input.GetKey(KeyCode.S))
         {
             //down x
             hAxis = 0;
             vAxis = -1;
+            model.transform.eulerAngles = new Vector3(0, 180, 0);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             //up in x
             hAxis = 1;
             vAxis = 0;
+            model.transform.eulerAngles = new Vector3(0, 90, 0);
         }
         else
         {

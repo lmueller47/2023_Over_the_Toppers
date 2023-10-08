@@ -10,6 +10,8 @@ public class CleanerMovement : MonoBehaviour
     public float speed = 20f;
     private Rigidbody rb;
 
+    public GameObject model;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -33,24 +35,28 @@ public class CleanerMovement : MonoBehaviour
             //move up in z
             hAxis = 0;
             vAxis = 1;
+            model.transform.eulerAngles = new Vector3(0, 0, 0);
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            //move down in z
+            //move down in x
             hAxis = -1;
             vAxis = 0;
+            model.transform.eulerAngles = new Vector3(0, -90, 0);
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            //down x
+            //down z
             hAxis = 0;
             vAxis = -1;
+            model.transform.eulerAngles = new Vector3(0, 180, 0);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             //up in x
             hAxis = 1;
             vAxis = 0;
+            model.transform.eulerAngles = new Vector3(0, 90, 0);
         }
         else
         {
