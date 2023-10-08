@@ -56,7 +56,7 @@ public class Stacking : MonoBehaviour
             else
             {
                 //change tag so it can collide with cleaner
-                //gameObject.layer = collision.gameObject.layer;
+                gameObject.layer = collision.gameObject.layer;
                 this.gameObject.tag = "Trash";
         }
     }
